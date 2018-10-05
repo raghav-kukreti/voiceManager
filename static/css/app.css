@@ -1,0 +1,104 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out; }
+
+body {
+  font-family: Raleway; }
+
+.hero {
+  height: 100vh;
+  background: url(bg.jpg) center center no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  display: table; }
+  .hero .centered {
+    display: table-cell;
+    vertical-align: middle;
+    background: rgba(242, 112, 156, 0.3);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(242, 112, 156, 0.5), rgba(255, 148, 114, 0.5));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(242, 112, 156, 0.5)), to(rgba(255, 148, 114, 0.5)));
+    background: -webkit-linear-gradient(left, rgba(242, 112, 156, 0.5), rgba(255, 148, 114, 0.5));
+    background: -o-linear-gradient(left, rgba(242, 112, 156, 0.5), rgba(255, 148, 114, 0.5));
+    background: linear-gradient(to right, rgba(242, 112, 156, 0.5), rgba(255, 148, 114, 0.5));
+    padding: 0 4rem; }
+    .hero .centered .text-contain {
+      width: 43%;
+      background: #fff;
+      padding: 50px 30px;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 0 33px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 33px rgba(0, 0, 0, 0.1); }
+      .hero .centered .text-contain h1, .hero .centered .text-contain p {
+        color: rgba(0, 0, 0, 0.7); }
+      .hero .centered .text-contain h1 {
+        font-size: 3rem; }
+        .hero .centered .text-contain h1 span {
+          padding-bottom: 4px;
+          border-bottom: 5px solid rgba(255, 255, 255, 0.2); }
+      .hero .centered .text-contain p {
+        margin-top: 20px;
+        font-size: 1.3rem; }
+
+nav {
+  padding: 30px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff; }
+  nav .logo {
+    font-weight: 900;
+    background: #f857a6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f857a6, #ff5858);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from(#f857a6), to(#ff5858));
+    background: -webkit-linear-gradient(left, #f857a6, #ff5858);
+    background: -o-linear-gradient(left, #f857a6, #ff5858);
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  nav ul {
+    float: right; }
+    nav ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 30px; }
+
+a {
+  text-decoration: none;
+  color: #f2709c; }
+
+.button {
+  position: relative;
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 15px;
+  padding: 13px 25px;
+  border: 2px solid #f2709c;
+  color: #f2709c;
+  background: transparent; }
+  .button:hover {
+    background: #f2709c;
+    border: 2px solid #f2709c;
+    -webkit-box-shadow: 3px 3px 0 rgba(255, 255, 255, 0);
+    box-shadow: 3px 3px 0 rgba(255, 255, 255, 0);
+    opacity: 1;
+    color: #fff; }
+
+.active {
+  background: #f2709c;
+  color: #fff; }

@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from instagram import getfollowedby, getname
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///main.db'
 db = SQLAlchemy(app)
 
@@ -62,6 +62,14 @@ def register():
 def logout():
 	session['logged_in'] = False
 	return redirect(url_for('home'))
+
+@app.route("/calendar")
+def calendar():
+	return render_template('calendar.html')
+
+@app.route("/logs")
+def logs():
+	return render_template('logs.html')
 
 
 if __name__ == '__main__':
