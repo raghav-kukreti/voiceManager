@@ -1,9 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 {% if session['logged_in'] %}
-  <div class="record_btn">
-    RECORD
-  </div>
+<textarea id="transcript" placeholder="Your text will appear here." readonly="True"></textarea>
+<br>
+<input type="button" onclick="startSpeech()" value="Query" />
+<script>
+	function startSpeech(){
+		document.getElementById('transcript').value = ' ';
+        if(window.hasOwnProperty('webkitSpeechRecognition')){
+        	var recognition= new webkitSpeechRecognition();
+        	recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = "en-US";
+            recognition.start();
+            console.log("start");
+	        recognition.onresult = function (e) {
+	            console.log("hey");
+	            document.getElementById('transcript').value = e.results[0][0].transcript;
+	            recognition.stop();
+	            var data = e.results[0][0].transcript;
+	        };
+	        recognition.onerror = function (e) {
+	            recognition.stop();
+	            console.log("Recognition had an error "+e.error);
+	        }
+        }
+	}
+</script>
+
 {% else %}
 
 
