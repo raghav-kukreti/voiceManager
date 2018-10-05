@@ -72,6 +72,11 @@ nav {
       list-style-type: none;
       display: inline-block;
       margin-right: 30px; }
+      nav ul li a {
+        border-top: 2px solid rgba(242, 112, 156, 0);
+        padding-top: 28px; }
+        nav ul li a:hover {
+          border-top: 2px solid #f2709c; }
 
 a {
   text-decoration: none;
@@ -148,6 +153,31 @@ a {
   position: absolute;
   top: 400px; }
 
+.record_button {
+  height: 200px;
+  -webkit-box-shadow: 0px 15px 0 rgba(242, 112, 156, 0.6);
+  box-shadow: 0px 15px 0 rgba(242, 112, 156, 0.6);
+  border-radius: 50px;
+  width: 500px;
+  font-weight: 900;
+  font-family: Raleway;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  background: #f2709c;
+  border: none;
+  outline: none;
+  top: 0;
+  position: relative; }
+  .record_button:hover {
+    top: -7px;
+    -webkit-box-shadow: 0px 20px 0 rgba(242, 112, 156, 0.6);
+    box-shadow: 0px 20px 0 rgba(242, 112, 156, 0.6); }
+  .record_button:active {
+    top: 7px;
+    -webkit-box-shadow: 0px 10px 0 rgba(242, 112, 156, 0.6);
+    box-shadow: 0px 10px 0 rgba(242, 112, 156, 0.6); }
+
 .logged_out_err {
   position: absolute;
   left: 50%;
@@ -163,3 +193,8 @@ a {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+
+.speech {
+  height: 100vh;
+  width: 100%;
+  background: #f6f6f6; }

@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 {% if session['logged_in'] %}
-<div class="speech_wrapper">
-<textarea id="transcript" placeholder="Your text will appear here." readonly="True"></textarea>
-<br>
-<input type="button" onclick="startSpeech()" value="Query" />
-</div>
+<section class="speech">
+  <div class="speech_wrapper">
+    <input type="button" onclick="startSpeech()" value="Record my day" class="record_button"> <br>
+    <textarea id="transcript" placeholder="Your text will appear here." readonly="True"></textarea>
+
+  </div>
+</section>
 <script>
 	function startSpeech(){
 		document.getElementById('transcript').value = ' ';
