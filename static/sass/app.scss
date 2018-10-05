@@ -157,3 +157,18 @@ a {
     }
   }
 }
+
+.record_btn {
+  position: absolute;
+  top: 300px;
+}
+
+.logged_out_err {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  h1 {
+
+  }
+}

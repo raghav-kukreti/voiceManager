@@ -143,3 +143,15 @@ a {
       .form_wrapper form input[type="submit"]:hover {
         background: #f2709c;
         color: #fff; }
+
+.record_btn {
+  position: absolute;
+  top: 300px; }
+
+.logged_out_err {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
