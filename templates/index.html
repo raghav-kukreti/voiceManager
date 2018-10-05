@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+  <div class="record_btn">
+    RECORD
+    <a href="/logout">logout</a>
+  </div>
+{% else %}
+
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+
+{% endif %}
+{% endblock %}
