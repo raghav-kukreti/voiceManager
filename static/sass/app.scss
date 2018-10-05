@@ -28,7 +28,7 @@ body {
     .text-contain{
       width: 43%;
       background: #fff;
-      padding: 50px 30px;
+      padding: 50px 40px;
       border-radius: 5px;
       box-shadow: 0 0 33px rgba(#000, 0.1);
       h1,p {
@@ -49,7 +49,7 @@ body {
   }
 }
 nav {
-  padding: 30px 30px;
+  padding: 30px 50px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -108,4 +108,52 @@ a {
 .active {
   background: rgba(#f2709c, 1);
   color: #fff;
+}
+.bg {
+  background: #f6f6f6;
+  height: 100vh;
+  width: 100%;
+}
+.form_wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  padding: 50px 30px;
+  transform: translate(-50%, -50%);
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #202020;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  form {
+    input {
+      border: 2px solid rgba(#a6a6a6, 0.4);
+      padding: 10px 10px;
+      width: 300px;
+      font-family: Raleway;
+      font-size: 1.2rem;
+      margin: 5px 0;
+      &:active,
+      &:focus {
+        border: 2px solid #f2709c;
+        outline: none;
+      }
+      &[type="submit"] {
+        width: 100%;
+        border: 2px solid #f2709c;
+        background: transparent;
+        border-radius: 2px;
+        color:#f2709c;
+        cursor: pointer;
+
+        &:hover {
+          background: #f2709c;
+          color: #fff;
+        }
+      }
+    }
+  }
 }
