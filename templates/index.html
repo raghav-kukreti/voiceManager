@@ -3,13 +3,13 @@
 {% if session['logged_in'] %}
 <section class="speech">
   <div class="speech_wrapper">
-    <input type="button" onclick="startSpeech()" value="Record my day" class="record_button"> <br>
-    <textarea id="transcript" placeholder="Your text will appear here." readonly="True"></textarea>
-
+    <input type="button" onclick="startSpeech()" value="Record my day" class="record_button" id="recordButton"> <br>
+    <textarea id="transcript" placeholder="Forget everything and just talk." readonly="True"></textarea>
   </div>
 </section>
 <script>
 	function startSpeech(){
+    document.getElementById('recordButton').value = 'Recording...';
 		document.getElementById('transcript').value = ' ';
         if(window.hasOwnProperty('webkitSpeechRecognition')){
         	var recognition= new webkitSpeechRecognition();
@@ -20,6 +20,7 @@
             console.log("start");
 	        recognition.onresult = function (e) {
 	            console.log("hey");
+              document.getElementById('recordButton').value = 'Done for now!';
 	            document.getElementById('transcript').value = e.results[0][0].transcript;
 	            recognition.stop();
 	            var data = e.results[0][0].transcript;
