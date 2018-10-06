@@ -19,11 +19,13 @@
             recognition.start();
             console.log("start");
 	        recognition.onresult = function (e) {
-	            console.log("hey");
+              var content = document.getElementById('transcript').value = e.results[0][0].transcript;
+
               document.getElementById('recordButton').value = 'Done for now!';
 	            document.getElementById('transcript').value = e.results[0][0].transcript;
 	            recognition.stop();
 	            var data = e.results[0][0].transcript;
+
 	        };
 	        recognition.onerror = function (e) {
 	            recognition.stop();
@@ -32,7 +34,11 @@
         }
 	}
 </script>
-
+<script>
+  var text = $("#transcript").val();
+  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+  FileSaver.saveAs(blob, "log.txt");
+</script>
 {% else %}
 
 
