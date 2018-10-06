@@ -8,6 +8,24 @@
   </div>
 </section>
 <script>
+  function download(data, filename, type) {
+      var file = new Blob([data], {type: type});
+      if (window.navigator.msSaveOrOpenBlob) // IE10+
+          window.navigator.msSaveOrOpenBlob(file, filename);
+      else { // Others
+          var a = document.createElement("a"),
+                  url = URL.createObjectURL(file);
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(function() {
+              document.body.removeChild(a);
+              window.URL.revokeObjectURL(url);
+          }, 0);
+      }
+  }
+
 	function startSpeech(){
     document.getElementById('recordButton').value = 'Recording...';
 		document.getElementById('transcript').value = ' ';
@@ -26,6 +44,8 @@
 	            recognition.stop();
 	            var data = e.results[0][0].transcript;
 
+              download(data, 'log.txt', 'text/plain')
+
 	        };
 	        recognition.onerror = function (e) {
 	            recognition.stop();
@@ -33,11 +53,6 @@
 	        }
         }
 	}
-</script>
-<script>
-  var text = $("#transcript").val();
-  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-  FileSaver.saveAs(blob, "log.txt");
 </script>
 {% else %}
 
