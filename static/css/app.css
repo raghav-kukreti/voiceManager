@@ -210,3 +210,12 @@ a {
   height: 100vh;
   width: 100%;
   background: #f6f6f6; }
+
+.result_btn {
+  position: absolute;
+  bottom: 30px;
+  right: 10px; }
+  .result_btn a {
+    border: 2px solid #f2709c;
+    padding: 10px 20px;
+    display: none; }

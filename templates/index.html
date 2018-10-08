@@ -7,6 +7,10 @@
     <textarea id="transcript" placeholder="Forget everything and just talk." readonly="True"></textarea>
   </div>
 </section>
+
+<div class="result_btn">
+  <a href="#0" id = "next_btn">Personalized results</a>
+</div>
 <script>
   function download(data, filename, type) {
       var file = new Blob([data], {type: type});
@@ -43,8 +47,11 @@
 	            document.getElementById('transcript').value = e.results[0][0].transcript;
 	            recognition.stop();
 	            var data = e.results[0][0].transcript;
+              var next = document.getElementById("next_btn");
 
-              download(data, 'log.txt', 'text/plain')
+              // Downloads the file as log.txt
+              next.style.display = "block";
+              download(data, 'log.txt', 'text/plain');
 
 	        };
 	        recognition.onerror = function (e) {

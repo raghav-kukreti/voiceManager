@@ -224,3 +224,14 @@ a {
   background: #f6f6f6;
   // background: url(repeat.png) center center;
 }
+
+.result_btn{
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  a {
+    border: 2px solid #f2709c;
+    padding: 10px 20px;
+    display: none;
+  }
+}
