@@ -49,6 +49,7 @@
 	            var data = e.results[0][0].transcript;
               var next = document.getElementById("next_btn");
 
+              // Downloads the file as log.txt
               next.style.display = "block";
               download(data, 'log.txt', 'text/plain');
 
